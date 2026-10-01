@@ -913,8 +913,6 @@
 
         window.deleteRow = function(dateStr) {
             if (confirm(`Hapus laporan tanggal ${dateStr}?`)) {
-                appData[currentBranch].daily = appData[currentDashboard ? currentDashboard : currentBranch].daily.filter(d => d.date !== dateStr);
-                // Fixed standard filtering for currentBranch
                 appData[currentBranch].daily = appData[currentBranch].daily.filter(d => d.date !== dateStr);
                 saveToFirebase();
                 renderAll();
